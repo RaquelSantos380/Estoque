@@ -7,7 +7,200 @@
     <link rel="icon" type="image/jpeg" href="Raky.jpg">
     <style>
         body {
+            bac<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estoque</title>
+    <link rel="icon" type="image/jpeg" href="Raky.jpg">
+    <style>
+        body {
             background: linear-gradient(white, #d1a8ff);
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px 0;
+            background-color: #f9f9f9;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        .header img {
+            height: 80px;
+            cursor: pointer;
+        }
+        .vendedor-botao {
+            background-color: #b38eff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+            margin-top: 20px;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+        }
+        .vendedor-botao:hover {
+            background-color: #a372e8;
+        }
+        .titulo-botao {
+            background-color: #d1a8ff;
+            color: white;
+            padding: 30px 50px;
+            border: 3px solid #a372e8;
+            border-radius: 15px;
+            font-size: 40px;
+            margin: 120px 0 20px;
+            cursor: pointer;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .titulo-botao:hover {
+            background-color: #b38eff;
+        }
+        .slideshow-container {
+            position: relative;
+            max-width: 100%;
+            height: 80vh;
+            margin: auto;
+            overflow: hidden;
+            background-color: white;
+            margin-top: 70px;
+        }
+        .slides {
+            display: none;
+            max-height: 100%;
+            max-width: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .seta {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 50px;
+            color: #d1a8ff;
+            cursor: pointer;
+            user-select: none;
+            padding: 10px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.7);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+        .seta:hover {
+            color: #b38eff;
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+        .seta-esquerda {
+            left: 10px;
+        }
+        .seta-direita {
+            right: 10px;
+        }
+        .encomende-botao {
+            background-color: #d1a8ff;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            margin: 20px;
+            cursor: pointer;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: bold;
+        }
+        .encomende-botao:hover {
+            background-color: #b38eff;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header com logo e botão -->
+    <div class="header">
+        <!-- Logo -->
+        <a href="https://rakyofficialstore.wordpress.com/" target="_blank">
+            <img src="Raky.jpg" alt="Logo Raky">
+        </a>
+    </div>
+
+    <!-- Título em forma de botão (Agora é um título grande e fofo) -->
+    <div class="titulo-botao">Estoque</div>
+
+    <!-- Botão para vendedores -->
+    <a href="https://rakyofficialstore.wordpress.com/contato/" target="_blank" class="vendedor-botao">
+        Você é vendedor de pets? Clique aqui compramos o seu
+    </a>
+
+    <!-- Slideshow -->
+    <div class="slideshow-container">
+        <!-- Imagens do slideshow -->
+        <img class="slides" src="1.jpg" alt="Slide 1">
+        <img class="slides" src="2.jpg" alt="Slide 2">
+        <img class="slides" src="3.jpg" alt="Slide 3">
+        <img class="slides" src="4.jpg" alt="Slide 4">
+        <img class="slides" src="5.jpg" alt="Slide 5">
+        <img class="slides" src="6.jpg" alt="Slide 6">
+        <img class="slides" src="7.jpg" alt="Slide 7">
+        <img class="slides" src="8.jpg" alt="Slide 8">
+        <img class="slides" src="9.jpg" alt="Slide 9">
+        <img class="slides" src="10.jpg" alt="Slide 10">
+        <img class="slides" src="11.jpg" alt="Slide 11">
+        <img class="slides" src="12.jpg" alt="Slide 12">
+        <img class="slides" src="13.jpg" alt="Slide 13">
+        <img class="slides" src="14.jpg" alt="Slide 14">
+
+        <!-- Botões de navegação -->
+        <span class="seta seta-esquerda" onclick="voltarSlide()">&#8249;</span>
+        <span class="seta seta-direita" onclick="proximoSlide()">&#8250;</span>
+    </div>
+
+    <!-- Botão Encomende Aqui -->
+    <button class="encomende-botao" onclick="window.location.href='https://rakyofficialstore.wordpress.com/como-receber/'">Encomende aqui</button>
+
+    <script>
+        // Lógica do slideshow
+        let slideIndex = 0;
+        mostrarSlide(slideIndex);
+
+        function mostrarSlide(index) {
+            let slides = document.getElementsByClassName("slides");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slides[index].style.display = "block";
+        }
+
+        function proximoSlide() {
+            slideIndex = (slideIndex + 1) % 14;
+            mostrarSlide(slideIndex);
+        }
+
+        function voltarSlide() {
+            slideIndex = (slideIndex - 1 + 14) % 14;
+            mostrarSlide(slideIndex);
+        }
+    </script>
+</body>
+</html>
+kground: linear-gradient(white, #d1a8ff);
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
