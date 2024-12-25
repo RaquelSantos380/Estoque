@@ -66,11 +66,11 @@
         .slideshow-container {
             position: relative;
             max-width: 100%;
-            height: 60vh; /* Diminuído para aproximar do topo */
+            height: 60vh;
             margin: auto;
             overflow: hidden;
             background-color: white;
-            margin-top: 30px; /* Ajustado para ficar mais próximo do topo */
+            margin-top: 30px;
         }
         .slides {
             display: none;
@@ -121,6 +121,13 @@
         .encomende-botao:hover {
             background-color: #b38eff;
         }
+        .seta-inferior {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 18px;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            color: #6a0080;
+        }
     </style>
 </head>
 <body>
@@ -132,7 +139,7 @@
         </a>
     </div>
 
-    <!-- Título em forma de botão (Agora é um título grande e fofo) -->
+    <!-- Título em forma de botão -->
     <div class="titulo-botao">Estoque</div>
 
     <!-- Botão para vendedores -->
@@ -147,21 +154,14 @@
         <img class="slides" src="2.jpg" alt="Slide 2">
         <img class="slides" src="3.jpg" alt="Slide 3">
         <img class="slides" src="4.jpg" alt="Slide 4">
-        <img class="slides" src="5.jpg" alt="Slide 5">
-        <img class="slides" src="6.jpg" alt="Slide 6">
-        <img class="slides" src="7.jpg" alt="Slide 7">
-        <img class="slides" src="8.jpg" alt="Slide 8">
-        <img class="slides" src="9.jpg" alt="Slide 9">
-        <img class="slides" src="10.jpg" alt="Slide 10">
-        <img class="slides" src="11.jpg" alt="Slide 11">
-        <img class="slides" src="12.jpg" alt="Slide 12">
-        <img class="slides" src="13.jpg" alt="Slide 13">
-        <img class="slides" src="14.jpg" alt="Slide 14">
 
         <!-- Botões de navegação -->
         <span class="seta seta-esquerda" onclick="voltarSlide()">&#8249;</span>
         <span class="seta seta-direita" onclick="proximoSlide()">&#8250;</span>
     </div>
+
+    <!-- Texto "Clique na seta" -->
+    <div class="seta-inferior">Clique na seta para navegar</div>
 
     <!-- Botão Encomende Aqui -->
     <button class="encomende-botao" onclick="window.location.href='https://rakyofficialstore.wordpress.com/como-receber/'">Encomende aqui</button>
@@ -180,12 +180,12 @@
         }
 
         function proximoSlide() {
-            slideIndex = (slideIndex + 1) % 14;
+            slideIndex = (slideIndex + 1) % 4;
             mostrarSlide(slideIndex);
         }
 
         function voltarSlide() {
-            slideIndex = (slideIndex - 1 + 14) % 14;
+            slideIndex = (slideIndex - 1 + 4) % 4;
             mostrarSlide(slideIndex);
         }
     </script>
