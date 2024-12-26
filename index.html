@@ -1,4 +1,4 @@
-quero que de fundo bem baixo passe esse musica em loop: piano ambiente.mp3 nesse html: <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -94,12 +94,13 @@ quero que de fundo bem baixo passe esse musica em loop: piano ambiente.mp3 nesse
             padding: 12px 25px;
             border: none;
             border-radius: 25px;
-            font-size: 18px;
+            font-family: 'Oswald', sans-serif; /* Fonte mais chamativa */
+            font-weight: bold; /* Negrito */
+            font-weight: bold; /* Adicionei negrito */
             cursor: pointer;
             text-decoration: none;
             display: block;
             margin: 20px auto;
-            font-family: 'Comic Sans MS', cursive, sans-serif;
             text-align: center;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
@@ -125,6 +126,12 @@ quero que de fundo bem baixo passe esse musica em loop: piano ambiente.mp3 nesse
     </style>
 </head>
 <body>
+    <!-- Adiciona a música de fundo -->
+    <audio id="background-music" loop autoplay volume="0.1">
+        <source src="piano ambiente.mp3" type="audio/mp3">
+        Seu navegador não suporta o elemento de áudio.
+    </audio>
+
     <!-- Header com logo -->
     <div class="header">
         <a href="https://rakyofficialstore.wordpress.com/" target="_blank">
@@ -157,7 +164,7 @@ quero que de fundo bem baixo passe esse musica em loop: piano ambiente.mp3 nesse
 
     <!-- Rodapé -->
     <div class="rodape" id="rodape">
-        <p>Desenvolvido por RakyOfficialStore.</p>
+        <p></p>
     </div>
 
     <script>
